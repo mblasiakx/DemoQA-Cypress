@@ -1,25 +1,16 @@
+import BasePage from '../../../integration/Objects/BasePage'
+import PracticeForm from '../../Objects/Forms/PracticeForm'
+import {link} from '../../../../config'
+
 describe('Practice Form', ()=>{
     beforeEach(()=>{
-        cy.visit('https://demoqa.com/')
-
-        //go to forms tab
-        cy.get(':nth-child(2) > :nth-child(1) > .card-up').click()
-        cy.get('.main-header').contains('Forms').should('be.visible')
-
-        //go to Practice form section
-        cy.get(':nth-child(2) > .element-list > .menu-list > #item-0').click()
-        cy.wait(1000)
-        cy.get('.main-header').contains('Practice Form').should('be.visible')
+        cy.visit(link)
+        BasePage.GoToForms()
+        PracticeForm.GoToPracticeForm()
     })
 
-    it('Proper form validation', ()=>{
-        cy.get('.practice-form-wrapper').should('be.visible')
-        //cy.get('#firstName').type('Name')
-
+    it('Fill all fields in Practice Form',()=>{
+        PracticeForm.FillAllFields() // do poprawy
     })
 
-  
-
-    // TO OD :
-    // Finish
 })

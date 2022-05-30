@@ -9,22 +9,17 @@ describe('Check Links',()=>{
         Links.GoToLinksSection()
     })
 
-    //it('Links opened in new tabs', ()=>{
+    it('Check Api call', ()=>{
+        Links.CheckLinks()
+    })
 
-    //})
-
-    it('Links with sending api call', ()=>{
-
-        //created
-       
-        //cy.get('#created').click()
-        //cy.get('#linkWrapper > :nth-child(5) > #created').click()
-        //cy.get('#linkWrapper').find('#created').click()
-        //cy.get('#created').click()
-        //cy.get('#linkWrapper')
-        cy.contains('Created').click()
-
+    it('Open links in new tab', ()=>{
+        Links.OpenLinksInNewTab()
     })
 
     
 })
+
+
+//forms- practice
+//alerts - windows, modlas,alerts
