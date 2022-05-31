@@ -20,6 +20,3 @@ describe('Check Links',()=>{
     
 })
 
-
-//forms- practice
-//alerts - windows, modlas,alerts

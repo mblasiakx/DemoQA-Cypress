@@ -6,8 +6,17 @@ export default class Links{
     }
 
     static OpenLinksInNewTab(){
-        cy.get('#simpleLink').click()
-        cy.url().should('include', 'demoqa.com') // check url of new opened tab
+        cy.get('#simpleLink').invoke('removeAttr', 'target').click()
+        cy.url().should('eq', 'https://demoqa.com/') // check url of new opened tab
+
+        /*cy.window().then((win) => {  // only for buttons?
+            cy.stub(win, 'open', url => {
+              win.location.href = 'https://demoqa.com/'
+            }).as("popup")
+          })
+    
+          cy.get('#simpleLink').click()
+          cy.get('@popup').should("be.called")*/
     }
 
     static CheckLinks(){

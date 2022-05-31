@@ -13,17 +13,13 @@ describe('Browser Windows tests', ()=>{
         })
 
         it('Test New Window', ()=>{
-            BrowserWindows.OpenNewTab()
+            BrowserWindows.OpenNewWindow()
         })
 
-        it('Test New Window Message', ()=>{
-            BrowserWindows.OpenNewTab()
-        })
-
-        //dokonczyć ten test (it dla każdego buttona)
-        // poprawić url w link w elements
-        // 
-        
+       // it('Test New Window Message', ()=>{
+            //BrowserWindows.OpenNewWindowMessage()
+        //})
+     
 
 })
 
