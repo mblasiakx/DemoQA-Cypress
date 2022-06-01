@@ -12,6 +12,10 @@
     static GoToAlertsAndFrame(){
       cy.get(':nth-child(3) > :nth-child(1) > .avatar > svg').click()
     }
+
+    static GoToWidgets(){
+      cy.get(':nth-child(4) > :nth-child(1) > .avatar > svg').click()
+    }
    
  }
  

@@ -1,6 +1,7 @@
 import BasePage from '../../../integration/Objects/BasePage'
 import PracticeForm from '../../Objects/Forms/PracticeForm'
-import {link} from '../../../../config'
+import {link,first_name_practice,lastName_practice, userEmail_practice, userNumber_practice, dateOfBirthInput_practice, 
+ Subject,currentAddress_practice, Date1_practice, stateCity_practice } from '../../../../config'
 
 describe('Practice Form', ()=>{
     beforeEach(()=>{
@@ -10,7 +11,10 @@ describe('Practice Form', ()=>{
     })
 
     it('Fill all fields in Practice Form',()=>{
-        PracticeForm.FillAllFields() // do poprawy
+        PracticeForm.FillAllFields(first_name_practice,lastName_practice, userEmail_practice, userNumber_practice, dateOfBirthInput_practice, 
+            Subject,currentAddress_practice, Date1_practice, stateCity_practice) // to do
     })
+
+  
 
 })
