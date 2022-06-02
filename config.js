@@ -1,30 +1,30 @@
 export const link = 'https://demoqa.com'
 
 //TextBox 
-export const text_box_name = 'Name'
-export const text_box_email = 'name@test.com'
-export const text_box_incorrect_email =  'name.pl'
-export const text_box_current_address = 'Address 11'
-export const text_box_pernamant_addres = 'Adress 55'
+export const textBoxName = 'Name'
+export const textBoxEmail = 'name@test.com'
+export const textBoxIncorrectEmail =  'name.pl'
+export const textBoxCurrentAddress = 'Address 11'
+export const textBoxPernamantAddress = 'Adress 55'
 
 //WebTables
-export const web_tables_name = 'Name1'
-export const web_tables_surnam = 'Surname1'
-export const web_tables_email = 'test@gmail.com'
-export const web_tables_age = '20'
-export const web_tables_departament = 'DepartamentTest'
-export const web_tables_salary = 15000
+export const webTablesName = 'Name1'
+export const webTableSurname = 'Surname1'
+export const webTablesEmail = 'test@gmail.com'
+export const webTablesAge = '20'
+export const webTablesDepartament = 'DepartamentTest'
+export const webTablesSalary = 15000
 
 //PracticeForm
-export const first_name_practice = 'Test First Name'
-export const lastName_practice = 'Test First LastName'
-export const userEmail_practice = 'test@pl.com'
-export const userNumber_practice = '123123123'
-export const dateOfBirthInput_practice = '30 May 1999'
-export const Subject = 'Subject'
-export const currentAddress_practice = 'test12345'
-export const Date1_practice = 'NCR'
-export const stateCity_practice = 'Delhi'
+export const practiceFormFirstName = 'Test First Name'
+export const practiceLastName = 'Test First LastName'
+export const practiceUserEmail = 'test@pl.com'
+export const practiceUserNumber = '123123123'
+export const practiceDateOfBirthInput = '30 May 1999'
+export const subjectData = 'Subject'
+export const practiceCurrentAddress = 'test12345'
+export const practiceState = 'NCR'
+export const practiceStateCity = 'Delhi'
 
 
 

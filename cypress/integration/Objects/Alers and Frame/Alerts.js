@@ -1,17 +1,17 @@
 export default class Alerts{
-static GoToAlerts(){
+ goToAlerts(){
     //cy.contains('Alerts').click()
     cy.get('.accordion > :nth-child(3)> .element-list > .menu-list > #item-1').click()
 }
 
-static TestAlert(){
+    testAlert(){
     cy.get('#alertButton').click()
     cy.on('window:alert', (text) => {
         expect(text).to.contains('You clicked a button');
       });
 }
 
-static TestConfirmButton(){
+    testConfirmButton(){
     cy.get('#confirmButton').click()
     cy.on('window:confirm', (text) => {
         expect(text).to.contains('Do you confirm action?');
@@ -22,7 +22,7 @@ static TestConfirmButton(){
 }
 
 
-static TestPromptAlert(){
+ testPromptAlert(){
     cy.window().then(($win) => {
         cy.stub($win, 'prompt').returns('This is a test text')
         cy.get('#promtButton').click()

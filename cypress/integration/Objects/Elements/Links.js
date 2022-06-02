@@ -1,11 +1,11 @@
 export default class Links{
-    static GoToLinksSection(){
+     goToLinksSection(){
          cy.get(':nth-child(1) > .element-list > .menu-list > #item-5').click()
         //cy.wait(1000)
          cy.get('.main-header').contains('Links').should('be.visible')
     }
 
-    static OpenLinksInNewTab(){
+     openLinksInNewTab(){
         cy.get('#simpleLink').invoke('removeAttr', 'target').click()
         cy.url().should('eq', 'https://demoqa.com/') // check url of new opened tab
 
@@ -19,7 +19,7 @@ export default class Links{
           cy.get('@popup').should("be.called")*/
     }
 
-    static CheckLinks(){
+     checkLinks(){
         cy.get('#created').click()
         cy.get('#linkResponse').should('be.visible').and('have.text', 'Link has responded with staus 201 and status text Created') 
         cy.get('#no-content').click()

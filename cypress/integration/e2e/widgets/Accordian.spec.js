@@ -1,16 +1,16 @@
-import BasePage from '../../../integration/Objects/BasePage'
-import Accordian from '../../Objects/Widgets/Accordian'
+import BasePage from '../../Objects/base_page'
+import Accordian from '../../Objects/Widgets/accordian'
 import {link} from '../../../../config'
 
 describe('Test Accordian page', ()=>{
     before(()=>{
         cy.visit(link)
-        BasePage.GoToWidgets()
-        Accordian.GoToAccordian()
+        BasePage.goToWidgets()
+        Accordian.goToAccordian()
         })
 
         it('Test Text field ', ()=>{
-            Accordian.GoToAccordian()
-            Accordian.CheckText()
+            Accordian.goToAccordian()
+            Accordian.checkText()
         })
 })

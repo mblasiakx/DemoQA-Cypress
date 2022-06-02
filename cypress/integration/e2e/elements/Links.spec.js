@@ -1,20 +1,20 @@
 import {link} from '../../../../config'
-import BasePage from '../../../integration/Objects/BasePage'
-import Links from '.././../Objects/Elements/Links'
+import BasePage from '../../Objects/base_page'
+import Links from '../../Objects/Elements/links'
 describe('Check Links',()=>{
 
     beforeEach(()=>{
         cy.visit(link)
-        BasePage.GotoElements()
-        Links.GoToLinksSection()
+        BasePage.gotoElements()
+        Links.goToLinksSection()
     })
 
     it('Check Api call', ()=>{
-        Links.CheckLinks()
+        Links.checkLinks()
     })
 
     it('Open links in new tab', ()=>{
-        Links.OpenLinksInNewTab()
+        Links.openLinksInNewTab()
     })
 
     
