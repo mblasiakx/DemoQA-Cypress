@@ -1,4 +1,4 @@
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import Slider from '../../Objects/Widgets/slider'
 import {link} from '../../../../config'
 

@@ -1,5 +1,5 @@
 import {link,textBoxName,textBoxEmail,textBoxCurrentAddress,textBoxPernamantAddress,textBoxIncorrectEmail} from '../../../../config'
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import TextBox from '../../Objects/Elements/text_box'
 
 

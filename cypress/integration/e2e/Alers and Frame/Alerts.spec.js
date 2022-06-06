@@ -1,19 +1,25 @@
-import BasePage from '../../Objects/base_page'
+import { BasePage } from '../../Objects/base_page'
 import Alerts from '../../Objects/Alers and Frame/alerts'
-import {link} from '../../../../config'
-describe('Browser Windows tests', ()=>{
-    before(()=>{
+import { link } from '../../../../config'
+describe('Browser Windows tests', () => {
+    before(() => {
         cy.visit(link)
-        BasePage.goToAlertsAndFrame()
-        Alerts.goToAlerts()
-        })
+        let base_page_obj = new BasePage()
 
-        it('Test All Alerts', ()=>{
-            Alerts.testAlert()
+        base_page_obj.goToAlertsAndFrame()
+
+        //Alerts.goToAlerts()
+    })
+
+    it('Should open Alert', () => {
+        Alerts.testAlert()
+    })
+
+    /* it('Should open Confirm button', ()=>{
             Alerts.testConfirmButton()
-            Alerts.testPromptAlert()
         })
 
-
-
+        it('Should open Propmt Alert', ()=>{
+             Alerts.testPromptAlert()
+        })*/
 })

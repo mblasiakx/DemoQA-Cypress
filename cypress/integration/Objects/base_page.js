@@ -1,11 +1,11 @@
- export default class BasePage{
+ export class BasePage{
     
      gotoElements(){
         cy.get(':nth-child(1) > :nth-child(1) > .card-up').click()
        
     }
 
-     goToForms(){
+    goToForms(){
        cy.get(':nth-child(2) > :nth-child(1) > .avatar > svg').click()
     }
 

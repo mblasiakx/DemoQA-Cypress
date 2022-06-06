@@ -1,5 +1,5 @@
 import {link,webTablesName, webTableSurname, webTablesEmail, webTablesAge, webTablesDepartament, webTablesSalary} from '../../../../config'
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import WebTables from '../../Objects/Elements/web_tables'
 describe('WebTables - add,edit and remove', ()=>{
 

@@ -1,4 +1,4 @@
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import Modals from '../../Objects/Alers and Frame/modals'
 import {link} from '../../../../config'
 

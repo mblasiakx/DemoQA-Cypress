@@ -1,5 +1,5 @@
 import {link} from '../../../../config'
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import CheckBox from '../../Objects/Elements/check_box'
 describe('Test Check box', ()=>{
 

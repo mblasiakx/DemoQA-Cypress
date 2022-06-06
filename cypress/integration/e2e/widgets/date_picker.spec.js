@@ -1,4 +1,4 @@
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import DatePicker from '../../Objects/Widgets/date_picker'
 import {link} from '../../../../config'
 

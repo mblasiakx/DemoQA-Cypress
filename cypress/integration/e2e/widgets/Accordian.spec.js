@@ -1,4 +1,4 @@
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import Accordian from '../../Objects/Widgets/accordian'
 import {link} from '../../../../config'
 

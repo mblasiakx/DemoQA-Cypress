@@ -1,4 +1,4 @@
-import BasePage from '../../Objects/base_page'
+import {BasePage} from '../../Objects/base_page'
 import PracticeForm from '../../Objects/Forms/practice_form'
 import {link,practiceFormFirstName ,practiceLastName, practiceUserEmail, practiceUserNumber, practiceDateOfBirthInput, 
     subjectData, practiceCurrentAddress, practiceState, practiceStateCity } from '../../../../config'
