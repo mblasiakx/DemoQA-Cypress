@@ -1,16 +1,17 @@
-import {BasePage} from '../../Objects/base_page'
-import Slider from '../../Objects/Widgets/slider'
-import {link} from '../../../../config'
+import { BasePage } from '../../Objects/base_page'
+import { Slider } from '../../Objects/Widgets/slider'
+import { link } from '../../../../config'
 
-describe('Test Slider', ()=>{
-    before(()=>{
-        cy.visit(link)
-        BasePage.goToWidgets()
-        Slider.goToSlider()
-        })
+describe('Test Slider', () => {
+  before(() => {
+    cy.visit(link)
+    const basePage = new BasePage()
+    basePage.goToSectionFromCategoryCards('Widgets')
+    basePage.goToSectionFromleftPanel('Slider')
+  })
 
-        it('Test Slider', ()=>{
-            Slider.changeSlider()
-        })
-
+  it('Should slider changes position', () => {
+    const slider = new Slider()
+    slider.changeSlider('90')
+  })
 })

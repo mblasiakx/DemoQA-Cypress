@@ -1,33 +1,25 @@
-export default class DatePicker{
-    goToDatePicker(){
-        cy.get('.accordion > :nth-child(4)> .element-list > .menu-list > #item-2').click()
-    }
+export class DatePicker {
+  get datePickerContainer() {
+    return cy.get('#datePickerContainer')
+  }
 
-     selectDate(year, month){
-        cy.get('#datePickerMonthYearInput').click()
-        cy.get('.react-datepicker__year-select').select(year)
-        cy.get('.react-datepicker__month-select').select(month)
+  get datePickerOpened() {
+    return cy.get('.react-datepicker')
+  }
 
-    }
+  goToDateInputFromPickerContainer(container) {
+    return this.datePickerContainer.get(container).click()
+  }
 
-     putDateToFirsField(Dates){
-        cy.get('#datePickerMonthYearInput').click()
-        cy.get('#datePickerMonthYearInput').clear()
-        cy.get('#datePickerMonthYearInput').type(Dates)
-    }
+  selectMonthAndYear(container, date) {
+    return this.datePickerOpened.get(container).select(date)
+  }
 
-     putDateIntoDateAndTime(DateAndTime){
-        cy.get('#dateAndTimePickerInput').clear()
-        cy.get('#dateAndTimePickerInput').type(DateAndTime)
-        
-    }
+  selectDay(container, day) {
+    return this.datePickerOpened.get(container).contains(day).click()
+  }
 
-     selectDateAndTime(){
-        cy.get('#dateAndTimePickerInput').click()
-        cy.get('.react-datepicker__month-read-view').select('May')
-        cy.get('.react-datepicker__year-read-view').select('2000')
-        //cy.get('.react-datepicker__time-list-item').contains('15:00').click()
-   
-
-    }
+  clearAndPutNewDateToDatePicker(container, date) {
+    return this.datePickerContainer.get(container).clear().type(date)
+  }
 }

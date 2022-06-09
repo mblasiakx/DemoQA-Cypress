@@ -1,9 +1,12 @@
-export default class Slider{
-     goToSlider(){
-        cy.get('.accordion > :nth-child(4)> .element-list > .menu-list > #item-3').click()
-    }
+export class Slider {
+  get sliderContainer() {
+    return cy.get('#sliderContainer')
+  }
 
-    changeSlider(){
-        cy.get('.range-slider').invoke('val', '80').trigger('change')
-    }
+  changeSlider(value) {
+    return this.sliderContainer
+      .get('.range-slider')
+      .invoke('val', value)
+      .trigger('change')
+  }
 }

@@ -1,24 +1,19 @@
-export default class CheckBox{
-     goToCheckBoxSection(){
-          cy.get(':nth-child(1) > .element-list > .menu-list > #item-1 > .text').click()
-          //cy.wait(2000)
-          //cy.get('.main-header').contains('Check Box').should('be.visible')
+export class CheckBox {
+  get expandButton() {
+    //return get('.check-box-tree-wrapper')
+    return cy.get('.rct-option-expand-all')
+  }
+  get allButtons() {
+    return cy.get('.rct-text')
+  }
 
-    }
+  showAllButtons() {
+    return this.expandButton.click()
+  }
 
-     showCheckBoxes(){
-        cy.get('.rct-option-expand-all > .rct-icon > path').click({force:true})
-    }
-
-     clickCheckBoxes(){
-    cy.get('#tree-node > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(1) > :nth-child(1) > label > .rct-checkbox > .rct-icon').click()
-    cy.get(':nth-child(1) > :nth-child(2) > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1) > label > .rct-checkbox > .rct-icon').click()
-    cy.get(':nth-child(2) > :nth-child(2) > :nth-child(1) > ol > :nth-child(2) > .rct-text > label > .rct-checkbox > .rct-icon > path').click()
-    cy.get(':nth-child(4) > .rct-text > label > .rct-checkbox > .rct-icon > path').click({force:true})
-    cy.get('#tree-node > :nth-child(2) > :nth-child(1) > :nth-child(2) > :nth-child(3) > :nth-child(1) > label > .rct-checkbox > .rct-icon').click({force:true})
-
-    }
-
-   
-    
+  clickSingleButton() {
+    return this.allButtons.contains('Home').within(($elm) => {
+      cy.get('.rct-checkbox').click()
+    })
+  }
 }

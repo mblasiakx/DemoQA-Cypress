@@ -1,18 +1,17 @@
-import {link} from '../../../../config'
-import {BasePage} from '../../Objects/base_page'
-import CheckBox from '../../Objects/Elements/check_box'
-describe('Test Check box', ()=>{
+import { link } from '../../../../config'
+import { BasePage } from '../../Objects/base_page'
+import { CheckBox } from '../../Objects/Elements/check_box'
+describe('Test Check box', () => {
+  beforeEach(() => {
+    cy.visit(link)
+    const basePage = new BasePage()
+    basePage.goToSectionFromCategoryCards('Elements')
+    basePage.goToSectionFromleftPanel('Check Box')
+  })
 
-    beforeEach(()=>{
-        cy.visit(link)
-        BasePage.gotoElements()
-        CheckBox.goToCheckBoxSection()
-
-        })
-
-    it('Check box section in Elements tab',()=>{
-      
-        CheckBox.showCheckBoxes()
-        CheckBox.clickCheckBoxes()  //click some checkboxes
-    })
+  it('Should click expand and click each button', () => {
+    const checkBox = new CheckBox()
+    checkBox.showAllButtons()
+    checkBox.clickSingleButton()
+  })
 })

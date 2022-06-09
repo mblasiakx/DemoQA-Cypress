@@ -1,17 +1,9 @@
-export default class RadioButton{
-    goToRadioButtonSection(){
-        cy.get(':nth-child(1) > .element-list > .menu-list > #item-2 > .text').click()
-        cy.get('.main-header').contains('Radio Button').should('be.visible')
-    }
-    
-    clickRadioButtons(){
-        cy.get(':nth-child(2) > .custom-control-label').click()
-        //cy.wait(3000)
-        cy.get(':nth-child(3) > .custom-control-label').click()
-    }
-    
-        
-      
-      
-    
+export class RadioButton {
+  get parentOfRadioButtons() {
+    return cy.contains('Do you like the site?').parent()
+  }
+
+  checkRadioButton(name) {
+    return this.parentOfRadioButtons.find('div').contains(name).click()
+  }
 }

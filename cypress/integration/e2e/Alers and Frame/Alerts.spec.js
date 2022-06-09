@@ -1,21 +1,20 @@
 import { BasePage } from '../../Objects/base_page'
-import Alerts from '../../Objects/Alers and Frame/alerts'
+import { Alerts } from '../../Objects/Alers and Frame/alerts'
 import { link } from '../../../../config'
 describe('Browser Windows tests', () => {
-    before(() => {
-        cy.visit(link)
-        let base_page_obj = new BasePage()
+  before(() => {
+    cy.visit(link)
+    const basePage = new BasePage()
+    basePage.goToSectionFromCategoryCards('Alerst, Frame & Windows')
+    basePage.goToSectionFromleftPanel('Alerts')
+  })
 
-        base_page_obj.goToAlertsAndFrame()
+  it('Should open Alert', () => {
+    const alert = new Alerts()
+    alert.testAlert('#alertButton')
+  })
 
-        //Alerts.goToAlerts()
-    })
-
-    it('Should open Alert', () => {
-        Alerts.testAlert()
-    })
-
-    /* it('Should open Confirm button', ()=>{
+  /* it('Should open Confirm button', ()=>{
             Alerts.testConfirmButton()
         })
 

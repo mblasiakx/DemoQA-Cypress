@@ -1,21 +1,17 @@
- export class BasePage{
-    
-     gotoElements(){
-        cy.get(':nth-child(1) > :nth-child(1) > .card-up').click()
-       
-    }
+export class BasePage {
+  get categoryCards() {
+    return cy.get('.category-cards')
+  }
 
-    goToForms(){
-       cy.get(':nth-child(2) > :nth-child(1) > .avatar > svg').click()
-    }
+  get leftPanel() {
+    return cy.get('.left-pannel')
+  }
 
-    goToAlertsAndFrame(){
-      cy.get(':nth-child(3) > :nth-child(1) > .avatar > svg').click()
-    }
+  goToSectionFromCategoryCards(name) {
+    return this.categoryCards.contains(name).click()
+  }
 
-    goToWidgets(){
-      cy.get(':nth-child(4) > :nth-child(1) > .avatar > svg').click()
-    }
-   
- }
- 
+  goToSectionFromleftPanel(name) {
+    return this.leftPanel.contains(name).click()
+  }
+}
