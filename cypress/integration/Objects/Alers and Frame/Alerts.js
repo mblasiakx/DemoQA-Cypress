@@ -10,10 +10,10 @@ export class Alerts {
     cy.get('#confirmButton').click()
     /*cy.on('window:confirm', (text) => {
         expect(text).to.contains('Do you confirm action?');
-      });
+      });*/
 
-    cy.on('window:confirm', ()=>true)
-    cy.get('#confirmResult').should('have.text', 'You selected Ok')*/
+    cy.on('window:confirm', () => true)
+    // cy.get('#confirmResult').should('have.text', 'You selected Ok')*/
   }
 
   testPromptAlert() {

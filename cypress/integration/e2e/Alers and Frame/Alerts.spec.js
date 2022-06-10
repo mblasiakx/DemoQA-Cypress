@@ -5,13 +5,14 @@ describe('Browser Windows tests', () => {
   before(() => {
     cy.visit(link)
     const basePage = new BasePage()
-    basePage.goToSectionFromCategoryCards('Alerst, Frame & Windows')
+    basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows')
     basePage.goToSectionFromleftPanel('Alerts')
   })
 
   it('Should open Alert', () => {
     const alert = new Alerts()
-    alert.testAlert('#alertButton')
+    //alert.testAlert('#alertButton')
+    alert.testConfirmButton()
   })
 
   /* it('Should open Confirm button', ()=>{
