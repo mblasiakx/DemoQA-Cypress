@@ -4,7 +4,7 @@ import { link } from '../../../../config'
 
 describe('Test Modals', () => {
   before(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows')
     basePage.goToSectionFromleftPanel('Modal Dialogs')

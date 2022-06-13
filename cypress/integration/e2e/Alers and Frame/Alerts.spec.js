@@ -3,7 +3,7 @@ import { Alerts } from '../../Objects/Alers and Frame/alerts'
 import { link } from '../../../../config'
 describe('Browser Windows tests', () => {
   before(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows')
     basePage.goToSectionFromleftPanel('Alerts')

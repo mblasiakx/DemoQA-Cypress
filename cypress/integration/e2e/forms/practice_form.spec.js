@@ -15,7 +15,7 @@ import {
 
 describe('Practice Form', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Forms')
     basePage.goToSectionFromleftPanel('Practice Form')

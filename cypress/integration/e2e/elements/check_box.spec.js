@@ -3,7 +3,7 @@ import { BasePage } from '../../Objects/base_page'
 import { CheckBox } from '../../Objects/Elements/check_box'
 describe('Test Check box', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Check Box')

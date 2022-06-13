@@ -11,7 +11,7 @@ import { BasePage } from '../../Objects/base_page'
 import { WebTables } from '../../Objects/Elements/web_tables'
 describe('WebTables - add,edit and remove', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Web Tables')

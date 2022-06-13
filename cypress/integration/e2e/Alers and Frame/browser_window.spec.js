@@ -3,7 +3,7 @@ import { BrowserWindows } from '../../Objects/Alers and Frame/browser_windows'
 import { link } from '../../../../config'
 describe('Browser Windows tests', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows')
     basePage.goToSectionFromleftPanel('Browser Windows')

@@ -3,7 +3,7 @@ import { BasePage } from '../../Objects/base_page'
 import { Links } from '../../Objects/Elements/links'
 describe('Check Links', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Links')

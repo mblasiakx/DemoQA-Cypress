@@ -10,7 +10,7 @@ import { TextBox } from '../../Objects/Elements/text_box'
 
 describe('Test Text Box in Elements tab', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Text Box')

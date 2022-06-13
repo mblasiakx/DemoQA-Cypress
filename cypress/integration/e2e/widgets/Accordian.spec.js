@@ -4,7 +4,7 @@ import { link } from '../../../../config'
 
 describe('Test Accordian page', () => {
   before(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Widgets')
     basePage.goToSectionFromleftPanel('Accordian')

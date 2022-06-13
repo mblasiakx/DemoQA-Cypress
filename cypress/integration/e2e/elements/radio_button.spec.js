@@ -3,7 +3,7 @@ import { RadioButton } from '../../Objects/Elements/radio_button'
 import { link } from '../../../../config'
 describe('Radio button section test', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Radio Button')

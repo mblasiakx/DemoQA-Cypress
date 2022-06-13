@@ -4,7 +4,7 @@ import { link } from '../../../../config'
 
 describe('Test DatePicker', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Widgets')
     basePage.goToSectionFromleftPanel('Date Picker')

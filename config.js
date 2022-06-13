@@ -1,9 +1,9 @@
 export const link = 'https://demoqa.com'
 
-//TextBox 
+//TextBox
 export const textBoxName = 'Name'
 export const textBoxEmail = 'name@test.com'
-export const textBoxIncorrectEmail =  'name.pl'
+export const textBoxIncorrectEmail = 'name.pl'
 export const textBoxCurrentAddress = 'Address 11'
 export const textBoxPernamantAddress = 'Adress 55'
 
@@ -25,8 +25,3 @@ export const subjectData = 'Subject'
 export const practiceCurrentAddress = 'test12345'
 export const practiceState = 'NCR'
 export const practiceStateCity = 'Delhi'
-
-
-
-
-

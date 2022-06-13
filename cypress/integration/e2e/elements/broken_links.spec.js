@@ -3,7 +3,7 @@ import { BasePage } from '../../Objects/base_page'
 import BrokenLinks from '../../Objects/Elements/broken_links'
 describe('Broken Links and Valid Links', () => {
   beforeEach(() => {
-    cy.visit(link)
+    cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Broken Links - Images')
