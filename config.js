@@ -1,27 +1,39 @@
-export const link = 'https://demoqa.com'
+export const config = {
+  'Practice Form': {
+    User: {
+      name: 'UserName1',
+      surname: 'Surname1',
+      email: 'test@pl.com',
+      number: '123321123',
+      dateOfBirth: '30 May 1999',
+    },
 
-//TextBox
-export const textBoxName = 'Name'
-export const textBoxEmail = 'name@test.com'
-export const textBoxIncorrectEmail = 'name.pl'
-export const textBoxCurrentAddress = 'Address 11'
-export const textBoxPernamantAddress = 'Adress 55'
+    Address: {
+      subjectData: 'Subject',
+      currentAddress: 'test1235',
+      state: 'NCR',
+      stateCity: 'Delhi',
+    },
+  },
 
-//WebTables
-export const webTablesName = 'Name1'
-export const webTableSurname = 'Surname1'
-export const webTablesEmail = 'test@gmail.com'
-export const webTablesAge = '20'
-export const webTablesDepartament = 'DepartamentTest'
-export const webTablesSalary = 15000
+  'Web Tables': {
+    User: {
+      name: 'Name1',
+      surname: 'Surname1',
+      email: 'test@gmail.com',
+      age: '20',
+      department: 'DepartamentTest',
+      salary: 15000,
+    },
+  },
 
-//PracticeForm
-export const practiceFormFirstName = 'Test First Name'
-export const practiceLastName = 'Test First LastName'
-export const practiceUserEmail = 'test@pl.com'
-export const practiceUserNumber = '123123123'
-export const practiceDateOfBirthInput = '30 May 1999'
-export const subjectData = 'Subject'
-export const practiceCurrentAddress = 'test12345'
-export const practiceState = 'NCR'
-export const practiceStateCity = 'Delhi'
+  'Text-box': {
+    User: {
+      name: 'UserName1',
+      surname: 'Surname1',
+      email: 'test@pl.com',
+      currentAddress: 'Address 11',
+      pernamentAddress: 'Address 122',
+    },
+  },
+}

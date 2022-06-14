@@ -15,11 +15,11 @@ describe('Browser Windows tests', () => {
     alert.testConfirmButton()
   })
 
-  /* it('Should open Confirm button', ()=>{
-            Alerts.testConfirmButton()
-        })
+  it('Should open Confirm button', () => {
+    Alerts.testConfirmButton()
+  })
 
-        it('Should open Propmt Alert', ()=>{
-             Alerts.testPromptAlert()
-        })*/
+  it('Should open Propmt Alert', () => {
+    Alerts.testPromptAlert()
+  })
 })
