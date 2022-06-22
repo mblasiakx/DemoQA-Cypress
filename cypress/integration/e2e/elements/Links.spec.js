@@ -9,11 +9,11 @@ describe('Check Links', () => {
     basePage.goToSectionFromleftPanel('Links')
   })
 
-  it(' Should open links in new tab', () => {
+  /* it(' Should open links in new tab', () => {
     const links = new Links()
     links.clickOnLinksToOpenInNewTab('#simpleLink')
     links.clickOnLinksToOpenInNewTab('#dynamicLink')
-  })
+  })*/
 
   it('Should open links and send api calls', () => {
     const links = new Links()

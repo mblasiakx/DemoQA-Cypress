@@ -12,12 +12,10 @@ describe('Broken Links and Valid Links', () => {
   it('Should open Valid link', () => {
     const brokenLinks = new BrokenLinks()
     brokenLinks.clickOnLink('Click Here for Valid Link')
-    //brokenLinks.checkUrlForTab('demoqa.com')
   })
 
   it('Should open Broken link', () => {
     const brokenLinks = new BrokenLinks()
     brokenLinks.clickOnLink('Click Here for Broken Link')
-    //brokenLinks.checkUrlForTab('the-internet.herokuapp.com/status_codes/500')
   })
 })
