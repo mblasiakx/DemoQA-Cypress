@@ -1,11 +1,22 @@
 export class BrowserWindows {
-  openTabFromBrowserWindows(path, button) {
-    cy.window().then((win) => {
-      cy.stub(win, 'open', (url) => {
-        win.location.href = path
-      }).as('popup')
-    })
-    cy.get(button).click()
-    //cy.get('@popup').should('be.called')
+  get newTabButton() {
+    return cy.get('#tabButton')
+  }
+  get newWindowButton() {
+    return cy.get('#windowButton')
+  }
+  get newWindowMessageButton() {
+    return cy.get('#messageWindowButton')
+  }
+
+  openTabFromBrowserWindows(buttonOption) {
+    switch (buttonOption) {
+      case 'tabButton':
+        return this.newTabButton.click()
+      case 'windowButton':
+        return this.newWindowButton.click()
+      case 'messageWindowButton':
+        return this.newWindowMessageButton.click()
+    }
   }
 }

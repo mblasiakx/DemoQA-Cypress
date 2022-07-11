@@ -1,25 +1,48 @@
 export class DatePicker {
-  get datePickerContainer() {
-    return cy.get('#datePickerContainer')
+  get selectSelectDateContainer() {
+    return cy.get('#datePickerMonthYearInput')
   }
 
-  get datePickerOpened() {
-    return cy.get('.react-datepicker')
+  get selectSelectDateYear() {
+    return cy.get('.react-datepicker__year-select')
   }
 
-  goToDateInputFromPickerContainer(container) {
-    return this.datePickerContainer.get(container).click()
+  get selectSelectDateMonth() {
+    return cy.get('.react-datepicker__month-select')
   }
 
-  selectMonthAndYear(container, date) {
-    return this.datePickerOpened.get(container).select(date)
+  get selectSelectDateDay() {
+    return cy.get('.react-datepicker__week')
   }
 
-  selectDay(container, day) {
-    return this.datePickerOpened.get(container).contains(day).click()
+  get selectDateAndTimeContainer() {
+    return cy.get('#dateAndTimePickerInput')
   }
 
-  clearAndPutNewDateToDatePicker(container, date) {
-    return this.datePickerContainer.get(container).clear().type(date)
+  clickDateInputFromPickerContainer() {
+    return this.selectSelectDateContainer.click()
+  }
+
+  selectPartOfDateInSelectDate(partOfDate, date) {
+    switch (partOfDate) {
+      case 'month':
+        return this.selectSelectDateMonth.select(date)
+      case 'year':
+        return this.selectSelectDateYear.select(date)
+      case 'day':
+        return this.selectSelectDateDay.contains(date).click()
+    }
+  }
+
+  clickDateAndTimeContainer() {
+    return this.selectDateAndTimeContainer.click()
+  }
+
+  clearDateInDateAndTime() {
+    return this.selectDateAndTimeContainer.clear()
+  }
+
+  putDateInDateAndTime(date) {
+    return this.selectDateAndTimeContainer.type(date)
   }
 }

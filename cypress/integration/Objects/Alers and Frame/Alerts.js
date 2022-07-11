@@ -1,19 +1,26 @@
 export class Alerts {
-  testAlert(container) {
-    cy.get(container).click()
-    /*cy.on('window:alert', (text) => {
-        expect(text).to.contains('You clicked a button');
-      });*/
+  get buttonsPanel() {
+    return cy.get('#javascriptAlertsWrapper')
+  }
+  get alertButton() {
+    return this.buttonsPanel.find('#alertButton')
+  }
+  get confirmButton() {
+    return this.buttonsPanel.find('#confirmButton')
+  }
+  get promptButton() {
+    return this.buttonsPanel.find('#promtButton')
   }
 
-  testConfirmButton() {
-    cy.get('#confirmButton').click()
-    /*cy.on('window:confirm', (text) => {
-        expect(text).to.contains('Do you confirm action?');
-      });*/
-
-    cy.on('window:confirm', () => true)
-    // cy.get('#confirmResult').should('have.text', 'You selected Ok')*/
+  testAlert(alertOption) {
+    switch (alertOption) {
+      case 'alert':
+        return this.alertButton.click()
+      case 'confirm':
+        return this.confirmButton.click()
+      case 'prompt':
+        return this.promptButton.click()
+    }
   }
 
   testPromptAlert() {

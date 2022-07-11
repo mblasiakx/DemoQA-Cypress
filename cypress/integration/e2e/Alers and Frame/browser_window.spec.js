@@ -3,34 +3,32 @@ import { BrowserWindows } from '../../Objects/Alers and Frame/browser_windows'
 import { link } from '../../../../config'
 describe('Browser Windows tests', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        cy.stub(win, 'open')
+      },
+    })
+
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows')
     basePage.goToSectionFromleftPanel('Browser Windows')
   })
-
   it('Should open New Tab', () => {
-    //'https://demoqa.com/sample'   'about:blank'
     const browserWindow = new BrowserWindows()
-    browserWindow.openTabFromBrowserWindows(
-      'https://demoqa.com/sample',
-      '#tabButton'
-    )
-  })
+    browserWindow.openTabFromBrowserWindows('tabButton')
 
+    cy.window().its('open').should('be.called')
+  })
   it('Should open New Window', () => {
     const browserWindow = new BrowserWindows()
-    browserWindow.openTabFromBrowserWindows(
-      'https://demoqa.com/sample',
-      '#windowButton'
-    )
-  })
+    browserWindow.openTabFromBrowserWindows('windowButton')
 
+    cy.window().its('open').should('be.called')
+  })
   it('Should open New Window Message', () => {
     const browserWindow = new BrowserWindows()
-    browserWindow.openTabFromBrowserWindows(
-      'about:blank',
-      '#messageWindowButton'
-    )
+    browserWindow.openTabFromBrowserWindows('messageWindowButton')
+
+    cy.window().its('open').should('be.called')
   })
 })

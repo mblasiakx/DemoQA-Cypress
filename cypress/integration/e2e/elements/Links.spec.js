@@ -9,20 +9,50 @@ describe('Check Links', () => {
     basePage.goToSectionFromleftPanel('Links')
   })
 
-  /* it(' Should open links in new tab', () => {
+  it('Should open "created" link', () => {
     const links = new Links()
-    links.clickOnLinksToOpenInNewTab('#simpleLink')
-    links.clickOnLinksToOpenInNewTab('#dynamicLink')
-  })*/
+    links.clickOnLinksToSendApiCall('created')
 
-  it('Should open links and send api calls', () => {
+    cy.get('#linkResponse').should('contain', 'Created').and('be.visible')
+  })
+
+  it('Should open "noContent" link', () => {
     const links = new Links()
-    links.clickOnLinksToSendApiCall('#created')
-    links.clickOnLinksToSendApiCall('#no-content')
-    links.clickOnLinksToSendApiCall('#moved')
-    links.clickOnLinksToSendApiCall('#bad-request')
-    links.clickOnLinksToSendApiCall('#unauthorized')
-    links.clickOnLinksToSendApiCall('#forbidden')
-    links.clickOnLinksToSendApiCall('#invalid-url')
+    links.clickOnLinksToSendApiCall('noContent')
+
+    cy.get('#linkResponse').should('contain', 'No Content').and('be.visible')
+  })
+
+  it('Should open "moved" link', () => {
+    const links = new Links()
+    links.clickOnLinksToSendApiCall('moved')
+
+    cy.get('#linkResponse').should('contain', 'Moved').and('be.visible')
+  })
+
+  it('Should open "bad request" link', () => {
+    const links = new Links()
+    links.clickOnLinksToSendApiCall('badRequest')
+
+    cy.get('#linkResponse').should('contain', 'Bad Request').and('be.visible')
+  })
+
+  it('Should open "unauthorized" link', () => {
+    const links = new Links()
+    links.clickOnLinksToSendApiCall('unauthorized')
+
+    cy.get('#linkResponse').should('contain', 'Unauthorized').and('be.visible')
+  })
+
+  it('Should open "forbidden" link', () => {
+    const links = new Links()
+    links.clickOnLinksToSendApiCall('forbidden')
+
+    cy.get('#linkResponse').should('contain', 'Forbidden').and('be.visible')
+  })
+
+  it('Should open "not found" link', () => {
+    const links = new Links()
+    links.clickOnLinksToSendApiCall('invalid-url')
   })
 })

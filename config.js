@@ -5,7 +5,7 @@ export const config = {
       surname: 'Surname1',
       email: 'test@pl.com',
       number: '123321123',
-      dateOfBirth: '30 May 1999',
+      dateOfBirth: '30 May 2019',
     },
 
     Address: {
@@ -29,7 +29,7 @@ export const config = {
 
   'Text-box': {
     User: {
-      name: 'UserName1',
+      name: 'UserName',
       surname: 'Surname1',
       email: 'test@pl.com',
       currentAddress: 'Address 11',

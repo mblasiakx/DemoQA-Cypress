@@ -3,10 +3,11 @@ export class Slider {
     return cy.get('#sliderContainer')
   }
 
+  get slider() {
+    return this.sliderContainer.find('.range-slider')
+  }
+
   changeSlider(value) {
-    return this.sliderContainer
-      .get('.range-slider')
-      .invoke('val', value)
-      .trigger('change')
+    return this.slider.invoke('val', value).trigger('change')
   }
 }

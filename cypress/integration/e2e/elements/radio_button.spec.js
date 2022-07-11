@@ -8,10 +8,17 @@ describe('Radio button section test', () => {
     basePage.goToSectionFromCategoryCards('Elements')
     basePage.goToSectionFromleftPanel('Radio Button')
   })
-  it('Should click all radio buttons', () => {
+  it('Should select Yes', () => {
     const radioButton = new RadioButton()
     radioButton.checkRadioButton('Yes')
+
+    cy.get('.text-success').should('have.text', 'Yes')
+  })
+
+  it('Should select Impressive', () => {
+    const radioButton = new RadioButton()
     radioButton.checkRadioButton('Impressive')
-    radioButton.checkRadioButton('No')
+
+    cy.get('.text-success').should('have.text', 'Impressive')
   })
 })

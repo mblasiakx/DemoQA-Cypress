@@ -3,11 +3,40 @@ export class TextBox {
     return cy.get('#userForm')
   }
 
-  putDataIntoUserForm(inputId, data) {
-    return this.userForm.get(inputId).type(data)
+  get userName() {
+    return this.userForm.find('#userName')
+  }
+
+  get userEmail() {
+    return this.userForm.find('#userEmail')
+  }
+
+  get currentAddress() {
+    return this.userForm.find('#currentAddress')
+  }
+
+  get permanentAddress() {
+    return this.userForm.find('#permanentAddress')
+  }
+
+  get submitButton() {
+    return this.userForm.find('.btn-primary')
+  }
+
+  putDataIntoUserForm(field, data) {
+    switch (field) {
+      case 'userName':
+        return this.userName.type(data)
+      case 'userEmail':
+        return this.userEmail.type(data)
+      case 'currentAddress':
+        return this.currentAddress.type(data)
+      case 'permanentAddress':
+        return this.permanentAddress.type(data)
+    }
   }
 
   submitUserForm() {
-    return cy.get('#submit').click()
+    return this.submitButton.click()
   }
 }

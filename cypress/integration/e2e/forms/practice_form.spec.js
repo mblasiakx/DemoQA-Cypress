@@ -1,49 +1,75 @@
 import { BasePage } from '../../Objects/base_page'
 import { PracticeForm } from '../../Objects/Forms/practice_form'
 import { config } from '../../../../config'
+import { addSyntheticLeadingComment } from 'typescript'
 
 describe('Practice Form', () => {
-  beforeEach(() => {
+  before(() => {
     cy.visit('/')
     const basePage = new BasePage()
     basePage.goToSectionFromCategoryCards('Forms')
     basePage.goToSectionFromleftPanel('Practice Form')
   })
 
-  it('Should fill all fields and Submit', () => {
+  it('Should fill all fields', () => {
     const practiceForm = new PracticeForm()
     practiceForm.typeIntoFormElement(
-      '#firstName',
+      'firstName',
       config['Practice Form'].User.name
     )
     practiceForm.typeIntoFormElement(
-      '#lastName',
+      'lastName',
       config['Practice Form'].User.surname
     )
     practiceForm.typeIntoFormElement(
-      '#userEmail',
+      'email',
       config['Practice Form'].User.email
     )
+    practiceForm.typeIntoFormElement('radio', 'Male')
     practiceForm.typeIntoFormElement(
-      '#userNumber',
+      'mobile',
       config['Practice Form'].User.number
     )
     practiceForm.typeIntoFormElement(
-      '#currentAddress',
+      'subject',
+      config['Practice Form'].Address.subjectData
+    )
+    practiceForm.typeIntoFormElement('hobbies', '1')
+    practiceForm.typeIntoFormElement('hobbies', '2')
+    practiceForm.typeIntoFormElement('hobbies', '3')
+    practiceForm.typeIntoFormElement(
+      'currentAddress',
       config['Practice Form'].Address.currentAddress
     )
-    practiceForm.selectButtonElement('[type="radio"]', 'Male')
-    practiceForm.goToDateOfBirth('#dateOfBirthInput')
-    practiceForm.selectDateFromDateOfBirth()
-    practiceForm.selectButtonElement('#hobbies-checkbox-1', '1')
-    practiceForm.selectStateAndCity(
-      '#state',
+    practiceForm.typeIntoFormElement(
+      'state',
       config['Practice Form'].Address.state
     )
-    practiceForm.selectStateAndCity(
-      '#city',
+    practiceForm.typeIntoFormElement(
+      'city',
       config['Practice Form'].Address.stateCity
     )
+
+    cy.get('#firstName')
+      .should('have.value', config['Practice Form'].User.name)
+      .and('be.visible')
+    cy.get('#lastName')
+      .should('have.value', config['Practice Form'].User.surname)
+      .and('be.visible')
+    cy.get('#userEmail')
+      .should('have.value', config['Practice Form'].User.email)
+      .and('be.visible')
+    cy.get('#userNumber')
+      .should('have.value', config['Practice Form'].User.number)
+      .and('be.visible')
+    cy.get('#currentAddress')
+      .should('have.value', config['Practice Form'].Address.currentAddress)
+      .and('be.visible')
+    cy.get('.custom-control-input').should('be.checked')
+  })
+
+  it('Should submit form', () => {
+    const practiceForm = new PracticeForm()
     practiceForm.submitForm()
   })
 })
