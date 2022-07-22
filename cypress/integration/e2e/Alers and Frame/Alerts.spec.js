@@ -1,6 +1,5 @@
 import { BasePage } from '../../Objects/base_page'
 import { Alerts } from '../../Objects/Alers and Frame/alerts'
-import { link } from '../../../../config'
 describe('Browser Windows tests', () => {
   beforeEach(() => {
     cy.visit('/')

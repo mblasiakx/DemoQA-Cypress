@@ -1,4 +1,3 @@
-import { link } from '../../../../config'
 import { BasePage } from '../../Objects/base_page'
 import { Links } from '../../Objects/Elements/links'
 describe('Check Links', () => {

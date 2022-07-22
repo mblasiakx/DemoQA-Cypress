@@ -1,6 +1,5 @@
 import { BasePage } from '../../Objects/base_page'
 import { RadioButton } from '../../Objects/Elements/radio_button'
-import { link } from '../../../../config'
 describe('Radio button section test', () => {
   beforeEach(() => {
     cy.visit('/')
