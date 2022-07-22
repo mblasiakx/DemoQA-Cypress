@@ -2,23 +2,8 @@ export class WebTables {
   get webTablesWrapper() {
     return cy.get('.web-tables-wrapper')
   }
-  get firstElementDelete() {
-    return this.webTablesWrapper.find('#delete-record-1')
-  }
-  get secoundElementDelete() {
-    return this.webTablesWrapper.find('#delete-record-2')
-  }
-  get thirdElementDelete() {
-    return this.webTablesWrapper.find('#delete-record-3')
-  }
-  get firstElementEdit() {
-    return this.webTablesWrapper.find('#edit-record-1')
-  }
-  get secoundElementEdit() {
-    return this.webTablesWrapper.find('#edit-record-2')
-  }
-  get thirdElementEdit() {
-    return this.webTablesWrapper.find('#edit-record-3')
+  getElementOperation(operation, number) {
+    return this.webTablesWrapper.find(`#${operation}-record-${number}`)
   }
   get userformEdit() {
     return cy.get('.modal-content')
@@ -47,27 +32,16 @@ export class WebTables {
   get addUserButton() {
     return this.webTablesWrapper.find('#addNewRecordButton')
   }
-
-  removeUser(number) {
-    switch (number) {
-      case '1':
-        return this.firstElementDelete.click()
-      case '2':
-        return this.secoundElementDelete.click()
-      case '3':
-        return this.thirdElementDelete.click()
-    }
+  getSpecificElementFromList() {
+    return cy.get('.rt-tbody > :nth-child(1)> :nth-child(1)>:nth-child(1)')
   }
 
-  goToEditUserPanel(user) {
-    switch (user) {
-      case '1':
-        return this.firstElementEdit.click()
-      case '2':
-        return this.secoundElementEdit.click()
-      case '3':
-        return this.thirdElementEdit.click()
-    }
+  removeUser(number) {
+    return this.getElementOperation('delete', number).click()
+  }
+
+  goToEditUserPanel(number) {
+    return this.getElementOperation('edit', number).click()
   }
 
   goToAddUserForm() {
@@ -88,6 +62,8 @@ export class WebTables {
         return this.salayEdit.clear().type(info)
       case 'department':
         return this.departmentEdit.clear().type(info)
+      default:
+        throw new Error('No such element implemented!')
     }
   }
 

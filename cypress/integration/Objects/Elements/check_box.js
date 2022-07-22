@@ -5,16 +5,15 @@ export class CheckBox {
   get allButtons() {
     return cy.get('.rct-text')
   }
-
-  get homeButton() {
-    return this.allButtons.contains('Home')
+  getOneButton(btn) {
+    return this.allButtons.contains(btn)
   }
 
   showAllButtons() {
     return this.expandButton.click()
   }
 
-  clickSingleButton() {
-    return this.homeButton.click()
+  clickSingleButton(btn) {
+    return this.getOneButton(btn).click()
   }
 }

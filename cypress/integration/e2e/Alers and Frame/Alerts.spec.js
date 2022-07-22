@@ -21,23 +21,20 @@ describe('Browser Windows tests', () => {
   it('Should open Confirm Alert', () => {
     const alert = new Alerts()
     alert.testAlert('confirm')
+    alert.getWindowConfirmClick()
 
-    cy.on('window:confirm', (text) => {
-      expect(text).to.contains('Do you confirm action?')
-    })
-    cy.on('window:confirm', () => true)
-    cy.get('#confirmResult').should('have.text', 'You selected Ok')
+    alert.confirmAlertResult.should('have.text', 'You selected Ok')
   })
 
   it('Should open Propmt Alert', () => {
     const alert = new Alerts()
-    alert.testAlert('prompt')
-
+    alert.testAlert('promt')
     cy.window().then(($win) => {
       cy.stub($win, 'prompt').returns('This is a test text')
       cy.get('#promtButton').click()
     })
-    cy.get('#promptResult').should(
+
+    alert.promptAlertResult.should(
       'have.text',
       'You entered This is a test text'
     )

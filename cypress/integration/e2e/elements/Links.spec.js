@@ -13,42 +13,42 @@ describe('Check Links', () => {
     const links = new Links()
     links.clickOnLinksToSendApiCall('created')
 
-    cy.get('#linkResponse').should('contain', 'Created').and('be.visible')
+    links.linkInfoMessage.should('contain', 'Created').and('be.visible')
   })
 
   it('Should open "noContent" link', () => {
     const links = new Links()
-    links.clickOnLinksToSendApiCall('noContent')
+    links.clickOnLinksToSendApiCall('no content')
 
-    cy.get('#linkResponse').should('contain', 'No Content').and('be.visible')
+    links.linkInfoMessage.should('contain', 'No Content').and('be.visible')
   })
 
   it('Should open "moved" link', () => {
     const links = new Links()
     links.clickOnLinksToSendApiCall('moved')
 
-    cy.get('#linkResponse').should('contain', 'Moved').and('be.visible')
+    links.linkInfoMessage.should('contain', 'Moved').and('be.visible')
   })
 
   it('Should open "bad request" link', () => {
     const links = new Links()
-    links.clickOnLinksToSendApiCall('badRequest')
+    links.clickOnLinksToSendApiCall('bad request')
 
-    cy.get('#linkResponse').should('contain', 'Bad Request').and('be.visible')
+    links.linkInfoMessage.should('contain', 'Bad Request').and('be.visible')
   })
 
   it('Should open "unauthorized" link', () => {
     const links = new Links()
     links.clickOnLinksToSendApiCall('unauthorized')
 
-    cy.get('#linkResponse').should('contain', 'Unauthorized').and('be.visible')
+    links.linkInfoMessage.should('contain', 'Unauthorized').and('be.visible')
   })
 
   it('Should open "forbidden" link', () => {
     const links = new Links()
     links.clickOnLinksToSendApiCall('forbidden')
 
-    cy.get('#linkResponse').should('contain', 'Forbidden').and('be.visible')
+    links.linkInfoMessage.should('contain', 'Forbidden').and('be.visible')
   })
 
   it('Should open "not found" link', () => {

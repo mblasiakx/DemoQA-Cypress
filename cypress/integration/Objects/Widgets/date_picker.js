@@ -31,6 +31,8 @@ export class DatePicker {
         return this.selectSelectDateYear.select(date)
       case 'day':
         return this.selectSelectDateDay.contains(date).click()
+      default:
+        throw new Error('No such element implemented!')
     }
   }
 

@@ -1,7 +1,6 @@
 import { BasePage } from '../../Objects/base_page'
 import { PracticeForm } from '../../Objects/Forms/practice_form'
 import { config } from '../../../../config'
-import { addSyntheticLeadingComment } from 'typescript'
 
 describe('Practice Form', () => {
   before(() => {
@@ -14,11 +13,11 @@ describe('Practice Form', () => {
   it('Should fill all fields', () => {
     const practiceForm = new PracticeForm()
     practiceForm.typeIntoFormElement(
-      'firstName',
+      'first name',
       config['Practice Form'].User.name
     )
     practiceForm.typeIntoFormElement(
-      'lastName',
+      'last name',
       config['Practice Form'].User.surname
     )
     practiceForm.typeIntoFormElement(
@@ -38,7 +37,7 @@ describe('Practice Form', () => {
     practiceForm.typeIntoFormElement('hobbies', '2')
     practiceForm.typeIntoFormElement('hobbies', '3')
     practiceForm.typeIntoFormElement(
-      'currentAddress',
+      'current address',
       config['Practice Form'].Address.currentAddress
     )
     practiceForm.typeIntoFormElement(
@@ -50,22 +49,22 @@ describe('Practice Form', () => {
       config['Practice Form'].Address.stateCity
     )
 
-    cy.get('#firstName')
+    practiceForm.firsName
       .should('have.value', config['Practice Form'].User.name)
       .and('be.visible')
-    cy.get('#lastName')
+    practiceForm.lastName
       .should('have.value', config['Practice Form'].User.surname)
       .and('be.visible')
-    cy.get('#userEmail')
+    practiceForm.email
       .should('have.value', config['Practice Form'].User.email)
       .and('be.visible')
-    cy.get('#userNumber')
+    practiceForm.mobile
       .should('have.value', config['Practice Form'].User.number)
       .and('be.visible')
-    cy.get('#currentAddress')
+    practiceForm.currentAddress
       .should('have.value', config['Practice Form'].Address.currentAddress)
       .and('be.visible')
-    cy.get('.custom-control-input').should('be.checked')
+    practiceForm.radio.should('be.checked')
   })
 
   it('Should submit form', () => {

@@ -12,13 +12,13 @@ describe('Radio button section test', () => {
     const radioButton = new RadioButton()
     radioButton.checkRadioButton('Yes')
 
-    cy.get('.text-success').should('have.text', 'Yes')
+    radioButton.buttonInfo.should('have.text', 'Yes')
   })
 
   it('Should select Impressive', () => {
     const radioButton = new RadioButton()
     radioButton.checkRadioButton('Impressive')
 
-    cy.get('.text-success').should('have.text', 'Impressive')
+    radioButton.buttonInfo.should('have.text', 'Impressive')
   })
 })

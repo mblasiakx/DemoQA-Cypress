@@ -13,6 +13,6 @@ describe('Test Slider', () => {
     const slider = new Slider()
     slider.changeSlider('90')
 
-    cy.get('#sliderContainer').find('.range-slider').should('have.value', '90')
+    slider.slider.should('have.value', '90')
   })
 })

@@ -16,7 +16,7 @@ describe('Test DatePicker', () => {
     datePicker.selectPartOfDateInSelectDate('month', '2')
     datePicker.selectPartOfDateInSelectDate('day', '5')
 
-    cy.get('#datePickerMonthYearInput')
+    datePicker.selectSelectDateContainer
       .should('be.visible')
       .and('have.value', '02/25/2014')
   })
@@ -27,7 +27,7 @@ describe('Test DatePicker', () => {
     datePicker.clearDateInDateAndTime()
     datePicker.putDateInDateAndTime('October 3, 2023 12:00 PM')
 
-    cy.get('#dateAndTimePickerInput')
+    datePicker.selectDateAndTimeContainer
       .should('be.visible')
       .and('have.value', 'October 3, 2023 12:00 PM')
   })

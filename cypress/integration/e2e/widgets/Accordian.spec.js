@@ -13,20 +13,20 @@ describe('Test Accordian page', () => {
     const accordian = new Accordian()
     accordian.clickSection('Why do we use it?')
 
-    cy.get('#section3Heading').parent().find('p').should('be.visible')
+    accordian.sectionContent('3').parent().find('p').should('be.visible')
   })
 
   it('Should click "Where does it come from?" section ', () => {
     const accordian = new Accordian()
     accordian.clickSection('Where does it come from?')
 
-    cy.get('#section2Content').parent().find('p').should('be.visible')
+    accordian.sectionContent('2').parent().find('p').should('be.visible')
   })
 
   it('Should click "What is Lorem Ipsum?" section ', () => {
     const accordian = new Accordian()
     accordian.clickSection('What is Lorem Ipsum?')
 
-    cy.get('#section1Content').parent().find('p').should('be.visible')
+    accordian.sectionContent('1').parent().find('p').should('be.visible')
   })
 })

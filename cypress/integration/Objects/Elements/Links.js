@@ -23,37 +23,27 @@ export class Links {
   get notFoundLink() {
     return this.linkWrapper.find('#invalid-url')
   }
-
-  /*clickOnLinksToOpenInNewTab(linkId) {
-    cy.get(linkId).invoke('removeAttr', 'target').click()
-
-    cy.window().then((win) => {
-      // only for buttons?
-      cy.stub(win, 'open', (url) => {
-        win.location.href = 'https://demoqa.com/'
-      }).as('popup')
-    })
-
-    cy.get('#simpleLink').click()
-    cy.get('@popup').should('be.called')
-  }*/
-
+  get linkInfoMessage() {
+    return cy.get('#linkResponse')
+  }
   clickOnLinksToSendApiCall(link) {
     switch (link) {
       case 'created':
         return this.createdLink.click()
-      case 'noContent':
+      case 'no content':
         return this.noContnetLink.click()
       case 'moved':
         return this.movedLink.click()
-      case 'badRequest':
+      case 'bad request':
         return this.badRequestLink.click()
       case 'unauthorized':
         return this.unauthorizedLink.click()
       case 'forbidden':
         return this.forbiddenLink.click()
-      case 'notFound':
+      case 'not found':
         return this.notFoundLink.click()
+      default:
+        throw new Error('No such element implemented!')
     }
   }
 }

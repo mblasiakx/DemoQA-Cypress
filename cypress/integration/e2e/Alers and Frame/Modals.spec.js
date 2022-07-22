@@ -1,6 +1,5 @@
 import { BasePage } from '../../Objects/base_page'
 import { Modals } from '../../Objects/Alers and Frame/modals'
-import { link } from '../../../../config'
 
 describe('Test Modals', () => {
   beforeEach(() => {
@@ -12,15 +11,15 @@ describe('Test Modals', () => {
 
   it('Should show small modal ', () => {
     const modals = new Modals()
-    modals.openModal('small')
+    modals.openModal('Small')
 
-    cy.get('.modal-content').should('be.visible')
+    modals.modalContent.should('be.visible')
   })
 
   it('Should show and close large modal ', () => {
     const modals = new Modals()
-    modals.openModal('large')
+    modals.openModal('Large')
 
-    cy.get('.modal-content').should('be.visible')
+    modals.modalContent.should('be.visible')
   })
 })

@@ -1,32 +1,17 @@
 export class Modals {
-  get openSmallModal() {
-    return cy.get('#showSmallModal')
-  }
-  get openLargeModal() {
-    return cy.get('#showLargeModal')
-  }
-  get closeSmallModal() {
-    return cy.get('#closeSmallModal')
-  }
-  get closeLargeModal() {
-    return cy.get('#closeLargeModal')
+  get modalContent() {
+    return cy.get('.modal-content')
   }
 
-  openModal(buttonOption) {
-    switch (buttonOption) {
-      case 'small':
-        return this.openSmallModal.click()
-      case 'large':
-        return this.openLargeModal.click()
-    }
+  useModal(option, size) {
+    return cy.get(`#${option}${size}Modal`)
   }
 
-  closeModal(buttonOption) {
-    switch (buttonOption) {
-      case 'small':
-        return this.closeSmallModal.click()
-      case 'large':
-        return this.closeLargeModal.click()
-    }
+  openModal(buttonSize) {
+    return this.useModal('show', buttonSize).click()
+  }
+
+  closeModal(buttonSize) {
+    return this.useModal('close', buttonSize).click()
   }
 }

@@ -1,22 +1,11 @@
 export class BrowserWindows {
-  get newTabButton() {
-    return cy.get('#tabButton')
+  get windowObject() {
+    return cy.window().its('open')
   }
-  get newWindowButton() {
-    return cy.get('#windowButton')
+  windowButtons(option) {
+    return cy.get(`#${option}Button`)
   }
-  get newWindowMessageButton() {
-    return cy.get('#messageWindowButton')
-  }
-
   openTabFromBrowserWindows(buttonOption) {
-    switch (buttonOption) {
-      case 'tabButton':
-        return this.newTabButton.click()
-      case 'windowButton':
-        return this.newWindowButton.click()
-      case 'messageWindowButton':
-        return this.newWindowMessageButton.click()
-    }
+    return this.windowButtons(buttonOption).click()
   }
 }

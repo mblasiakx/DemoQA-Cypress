@@ -1,6 +1,5 @@
 import { BasePage } from '../../Objects/base_page'
 import { BrowserWindows } from '../../Objects/Alers and Frame/browser_windows'
-import { link } from '../../../../config'
 describe('Browser Windows tests', () => {
   beforeEach(() => {
     cy.visit('/', {
@@ -15,20 +14,20 @@ describe('Browser Windows tests', () => {
   })
   it('Should open New Tab', () => {
     const browserWindow = new BrowserWindows()
-    browserWindow.openTabFromBrowserWindows('tabButton')
+    browserWindow.openTabFromBrowserWindows('tab')
 
-    cy.window().its('open').should('be.called')
+    browserWindow.windowObject.should('be.called')
   })
   it('Should open New Window', () => {
     const browserWindow = new BrowserWindows()
-    browserWindow.openTabFromBrowserWindows('windowButton')
+    browserWindow.openTabFromBrowserWindows('window')
 
-    cy.window().its('open').should('be.called')
+    browserWindow.windowObject.should('be.called')
   })
   it('Should open New Window Message', () => {
     const browserWindow = new BrowserWindows()
-    browserWindow.openTabFromBrowserWindows('messageWindowButton')
+    browserWindow.openTabFromBrowserWindows('messageWindow')
 
-    cy.window().its('open').should('be.called')
+    browserWindow.windowObject.should('be.called')
   })
 })

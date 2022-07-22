@@ -1,4 +1,3 @@
-import { link } from '../../../../config'
 import { BasePage } from '../../Objects/base_page'
 import { BrokenLinks } from '../../Objects/Elements/broken_links'
 describe('Broken Links and Valid Links', () => {
@@ -13,9 +12,4 @@ describe('Broken Links and Valid Links', () => {
     const brokenLinks = new BrokenLinks()
     brokenLinks.clickOnLink('valid')
   })
-
-  /*it('Should open Broken link', () => {
-    const brokenLinks = new BrokenLinks()
-    brokenLinks.clickOnLink('broken')
-  })*/
 })

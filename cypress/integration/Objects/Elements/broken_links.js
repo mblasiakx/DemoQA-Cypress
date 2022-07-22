@@ -13,6 +13,8 @@ export class BrokenLinks {
         return this.validLink.invoke('attr', 'target', '_self').click()
       case 'broken':
         return this.brokenLink.invoke('attr', 'target', '_self').click()
+      default:
+        throw new Error('No such element implemented!')
     }
   }
 }
