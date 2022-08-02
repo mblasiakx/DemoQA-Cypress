@@ -1,6 +1,7 @@
 import { BasePage } from '../../Objects/base_page';
 import { BrokenLinks } from '../../Objects/Elements/broken_links';
 describe('Broken Links and Valid Links', () => {
+  let brokenLinks;
   beforeEach(() => {
     cy.visit('/');
     const basePage = new BasePage();
@@ -9,7 +10,7 @@ describe('Broken Links and Valid Links', () => {
   });
 
   it('Should open Valid link', () => {
-    const brokenLinks = new BrokenLinks();
+    brokenLinks = new BrokenLinks();
     brokenLinks.clickOnLink('Click Here for Valid Link');
   });
 });

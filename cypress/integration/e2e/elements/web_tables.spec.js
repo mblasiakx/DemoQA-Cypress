@@ -2,21 +2,21 @@ import { config } from '../../../../config';
 import { BasePage } from '../../Objects/base_page';
 import { WebTables } from '../../Objects/Elements/web_tables';
 describe('WebTables - add,edit and remove', () => {
+  let webTables;
   beforeEach(() => {
     cy.visit('/');
     const basePage = new BasePage();
+    webTables = new WebTables();
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Web Tables');
   });
 
   it('Should remove user', () => {
-    const webTables = new WebTables();
     webTables.removeUser('1');
     webTables.getSpecificElementFromList().should('have.text', 'Alden');
   });
 
   it('Should add user', () => {
-    const webTables = new WebTables();
     webTables.goToAddUserForm();
     webTables.addAndEditUser('firstName', config['Web Tables'].User.name);
     webTables.addAndEditUser('lastName', config['Web Tables'].User.surname);
@@ -49,7 +49,6 @@ describe('WebTables - add,edit and remove', () => {
   });
 
   it('Should edit user', () => {
-    const webTables = new WebTables();
     webTables.goToEditUserPanel('1');
     webTables.addAndEditUser('firstName', config['Web Tables'].User.name);
     webTables.addAndEditUser('lastName', config['Web Tables'].User.surname);

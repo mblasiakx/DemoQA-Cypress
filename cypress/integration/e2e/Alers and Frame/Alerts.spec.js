@@ -1,41 +1,40 @@
-import { BasePage } from '../../Objects/base_page'
-import { Alerts } from '../../Objects/Alers and Frame/alerts'
+import { BasePage } from '../../Objects/base_page';
+import { Alerts } from '../../Objects/Alers and Frame/alerts';
 describe('Browser Windows tests', () => {
+  let alert;
   beforeEach(() => {
-    cy.visit('/')
-    const basePage = new BasePage()
-    basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows')
-    basePage.goToSectionFromleftPanel(/^Alerts$/)
-  })
+    cy.visit('/');
+    const basePage = new BasePage();
+    alert = new Alerts();
+    basePage.goToSectionFromCategoryCards('Alerts, Frame & Windows');
+    basePage.goToSectionFromleftPanel(/^Alerts$/);
+  });
 
   it('Should open Alert', () => {
-    const alert = new Alerts()
-    alert.testAlert('alert')
+    alert.testAlert('alert');
 
     cy.on('window:alert', (text) => {
-      expect(text).to.contains('You clicked a button')
-    })
-  })
+      expect(text).to.contains('You clicked a button');
+    });
+  });
 
   it('Should open Confirm Alert', () => {
-    const alert = new Alerts()
-    alert.testAlert('confirm')
-    alert.getWindowConfirmClick()
+    alert.testAlert('confirm');
+    alert.getWindowConfirmClick();
 
-    alert.confirmAlertResult.should('have.text', 'You selected Ok')
-  })
+    alert.confirmAlertResult.should('have.text', 'You selected Ok');
+  });
 
   it('Should open Propmt Alert', () => {
-    const alert = new Alerts()
-    alert.testAlert('promt')
+    alert.testAlert('promt');
     cy.window().then(($win) => {
-      cy.stub($win, 'prompt').returns('This is a test text')
-      cy.get('#promtButton').click()
-    })
+      cy.stub($win, 'prompt').returns('This is a test text');
+      cy.get('#promtButton').click();
+    });
 
     alert.promptAlertResult.should(
       'have.text',
       'You entered This is a test text'
-    )
-  })
-})
+    );
+  });
+});

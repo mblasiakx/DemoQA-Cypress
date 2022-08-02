@@ -3,15 +3,16 @@ import { BasePage } from '../../Objects/base_page';
 import { TextBox } from '../../Objects/Elements/text_box';
 
 describe('Test Text Box in Elements tab', () => {
+  let textBox;
   before(() => {
     cy.visit('/');
     const basePage = new BasePage();
+    textBox = new TextBox();
     basePage.goToSectionFromCategoryCards('Elements');
     basePage.goToSectionFromleftPanel('Text Box');
   });
 
   it('Should type correct data', () => {
-    const textBox = new TextBox();
     textBox.putDataIntoUserForm('userName', config['Text-box'].User.name);
     textBox.putDataIntoUserForm('userEmail', config['Text-box'].User.email);
     textBox.putDataIntoUserForm(
@@ -38,7 +39,6 @@ describe('Test Text Box in Elements tab', () => {
   });
 
   it('Should submit form', () => {
-    const textBox = new TextBox();
     textBox.submitUserForm();
   });
 });

@@ -3,15 +3,16 @@ import { PracticeForm } from '../../Objects/Forms/practice_form';
 import { config } from '../../../../config';
 
 describe('Practice Form', () => {
+  let practiceForm;
   before(() => {
     cy.visit('/');
     const basePage = new BasePage();
+    practiceForm = new PracticeForm();
     basePage.goToSectionFromCategoryCards('Forms');
     basePage.goToSectionFromleftPanel('Practice Form');
   });
 
   it('Should fill all fields', () => {
-    const practiceForm = new PracticeForm();
     practiceForm.typeIntoFormElement(
       'first name',
       config['Practice Form'].User.name
@@ -68,7 +69,6 @@ describe('Practice Form', () => {
   });
 
   it('Should submit form', () => {
-    const practiceForm = new PracticeForm();
     practiceForm.submitForm();
   });
 });
