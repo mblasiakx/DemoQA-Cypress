@@ -1,20 +1,8 @@
 export class BrokenLinks {
-  get validLink() {
-    return cy.contains('Click Here for Valid Link')
+  getLink(text) {
+    return cy.contains(text);
   }
-
-  get brokenLink() {
-    return cy.contains('Click Here for Broken Link')
-  }
-
   clickOnLink(selectedLink) {
-    switch (selectedLink) {
-      case 'valid':
-        return this.validLink.invoke('attr', 'target', '_self').click()
-      case 'broken':
-        return this.brokenLink.invoke('attr', 'target', '_self').click()
-      default:
-        throw new Error('No such element implemented!')
-    }
+    return this.getLink(selectedLink).invoke('attr', 'target', '_self').click();
   }
 }
